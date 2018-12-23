@@ -1,4 +1,4 @@
-package gr.hua.erasmus.servlets;
+package main.java.gr.hua.erasmus.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

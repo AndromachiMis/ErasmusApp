@@ -1,4 +1,4 @@
-package gr.hua.erasmus.controllers;
+package main.java.gr.hua.erasmus.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class StudentController {
 
-	@RequestMapping("/submitform")
+	@RequestMapping("/submitForm")
 	public String submitForm() {
 		return "form";
 	}
 
-	@RequestMapping("/universitylist")
+	@RequestMapping("/universityList")
 	public String universityList() {
 		return "unilist";
 	}

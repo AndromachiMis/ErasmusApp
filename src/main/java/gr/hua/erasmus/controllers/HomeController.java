@@ -1,4 +1,4 @@
-package gr.hua.erasmus.controllers;
+package main.java.gr.hua.erasmus.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -9,19 +9,19 @@
 <body>
 <form action="/StudentServlet" method="POST">>
 
-  ÎÎ½Î¿Î¼Î±ÏÎµÏÏÎ½ÏÎ¼Î¿:<br>
+  Fullname:<br>
   <input type="text" name="fullname">
   <br>
-  ÎÏÎ¹Î¸Î¼ÏÏ ÎÎ·ÏÏÏÎ¿Ï (id):<br>
+  Username (id):<br>
   <input type="text" name="id">
   <br>
-  ÎÏÎ¹Î»Î­Î¾ÏÎµ Î­ÏÎ¿Ï ÏÎ¿Î¯ÏÎ·ÏÎ·Ï:<br>
+  Choose the year of your studies:<br>
    <input type="radio" name="year" value="3" checked> 3<br>
    <input type="radio" name="year" value="4"> 4<br>
    <br>
-    ÎÏÎ¹Î»Î­Î¾ÏÎµ Î±ÏÎ¹Î¸Î¼Ï Î¼Î±Î¸Î·Î¼Î¬ÏÏÎ½:<br>
-   <input type="radio" name="lessons" value="5" checked> 5<br>
-   <input type="radio" name="lessons" value=" 5">5<br>
+    Choose the number of courses in which you don't have an accessible grade:<br>
+   <input type="radio" name="lessons" value="greater than 5" checked> 5<br>
+   <input type="radio" name="lessons" value="5">5<br>
    <br>
    ÎÎ±ÏÎ­ÏÎµÏÎµ ÎºÎ¬ÏÎ¿Î¹Î¿ ÏÏÏÏÎ¯Î¿ Î¾Î­Î½Î·Ï Î³Î»ÏÏÏÎ±Ï;
    <input type="radio" name="foreign" value="ÎÎ±Î¹" checked> ÎÎ±Î¹<br>
@@ -30,9 +30,9 @@
    
    
    <br><br>
-   <input type="submit" value="Î¥ÏÎ¿Î²Î¿Î»Î®"> 
+   <input type="submit" value="Submit"> 
    
 </form>
-<p>ÎÎ¹Î± Î½Î± ÏÏÎ¿Î²Î¬Î»Î»ÎµÏÎµ ÏÎ·Î½ Î±Î¯ÏÎ·ÏÎ· Î¸Î± ÏÏÎ­ÏÎµÎ¹ Î½Î± ÏÏÏÏÏÎ¬ÏÎµ Î­ÏÏ 5 Î¼Î±Î¸Î®Î¼Î±ÏÎ±.</p>
+<p>In order to fill the form you should .</p>
 </body>
 </html>

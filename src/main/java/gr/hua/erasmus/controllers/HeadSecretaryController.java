@@ -1,4 +1,4 @@
-package gr.hua.erasmus.controllers;
+package main.java.gr.hua.erasmus.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,28 +8,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class HeadSecretaryController {
 
-	@RequestMapping("/addservice")
+	@RequestMapping("/addService")
 	public String addService() {
 		return "servicespage";
 	}
 
-	@RequestMapping("/addstudent")
+	@RequestMapping("/addStudent")
 	public String addStudent() {
 		return "servicespage";
 	}
 
-	@RequestMapping("/adduniversity")
+	@RequestMapping("/addUniversity")
 	public String addUniversity() {
 		return "servicespage";
 	}
 
-	@RequestMapping("/deletestudent")
+	@RequestMapping("/deleteStudent")
 	public String deleteStudent() {
 		return "servicespage";
 
 	}
 
-	@RequestMapping("/deleteuniverity")
+	@RequestMapping("/deleteUniverity")
 	public String deleteUniversity() {
 		return "servicespage";
 	}

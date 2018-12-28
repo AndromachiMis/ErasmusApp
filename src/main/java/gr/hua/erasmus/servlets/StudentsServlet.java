@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import main.java.gr.hua.erasmus.dao.StudentDAOImpl;
+import main.java.gr.hua.erasmus.entities.Student;
+
 /**
  * Servlet implementation class StudentsServlet
  */
@@ -39,7 +42,8 @@ public class StudentsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+//		doGet(request, response);
+		
 	}
 
 }

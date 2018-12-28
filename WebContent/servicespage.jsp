@@ -7,13 +7,11 @@
 <title>Services</title>
 </head>
 <body>
-<form action="/ServicesServlet" method="POST">
 <h2>Select a Service</h2>
-<a href="addUniversity">Add University</a>
+<a href="ErasmusApp/WebContent/WEB-INF/adduniversity.jsp">Add University</a>
 <a href="addservice">Add Service</a>
 <a href="addstudent">Add Student</a>
 <a href="deletestudent">Delete Student</a>
 <a href="deleteuniversity">Delete University</a>
-</form>
 </body>
 </html>

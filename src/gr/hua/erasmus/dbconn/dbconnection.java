@@ -1,4 +1,4 @@
-package main.java.gr.hua.erasmus.dbconn;
+package gr.hua.erasmus.dbconn;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

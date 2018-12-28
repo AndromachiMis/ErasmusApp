@@ -1,4 +1,4 @@
-package main.java.gr.hua.erasmus.entities;
+package gr.hua.erasmus.entities;
 
 import java.io.Serializable;
 

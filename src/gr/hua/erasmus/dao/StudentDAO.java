@@ -1,7 +1,8 @@
-package main.java.gr.hua.erasmus.dao;
+package gr.hua.erasmus.dao;
 
 import java.util.List;
-import main.java.gr.hua.erasmus.entities.Student;
+
+import gr.hua.erasmus.entities.Student;
 
 public interface StudentDAO {
 

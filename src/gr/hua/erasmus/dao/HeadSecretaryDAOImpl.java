@@ -1,4 +1,4 @@
-package main.java.gr.hua.erasmus.dao;
+package gr.hua.erasmus.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
-import main.java.gr.hua.erasmus.entities.HeadSecretary;
+import gr.hua.erasmus.entities.HeadSecretary;
 
 public class HeadSecretaryDAOImpl {
 	

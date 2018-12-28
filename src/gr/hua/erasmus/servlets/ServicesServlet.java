@@ -1,4 +1,4 @@
-package main.java.gr.hua.erasmus.servlets;
+package gr.hua.erasmus.servlets;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,20 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.java.gr.hua.erasmus.dao.StudentDAOImpl;
-import main.java.gr.hua.erasmus.entities.Student;
-
 /**
- * Servlet implementation class StudentsServlet
+ * Servlet implementation class ServicesServlet
  */
-@WebServlet("/StudentsServlet")
-public class StudentsServlet extends HttpServlet {
+@WebServlet("/ServicesServlet")
+public class ServicesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public StudentsServlet() {
+	public ServicesServlet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -42,8 +39,7 @@ public class StudentsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		doGet(request, response);
-		
+		doGet(request, response);
 	}
 
 }

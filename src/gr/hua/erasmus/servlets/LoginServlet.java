@@ -1,4 +1,4 @@
-package main.java.gr.hua.erasmus.servlets;
+package gr.hua.erasmus.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,9 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import main.java.gr.hua.erasmus.dao.StudentDAOImpl;
-import main.java.gr.hua.erasmus.dbconn.dbconnection;
-import main.java.gr.hua.erasmus.entities.Student;
+import gr.hua.erasmus.dao.StudentDAOImpl;
+import gr.hua.erasmus.dbconn.dbconnection;
+import gr.hua.erasmus.entities.Student;
 
 /**
  * Servlet implementation class LoginServlet

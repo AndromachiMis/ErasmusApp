@@ -9,11 +9,11 @@
 <body>
 <form action="/ServicesServlet" method="POST">
 <h2>Select a Service</h2>
-<button class="btn /adduniversity">Add University</button>
-<button class= "btn /addservice">Add Service</button>
-<button class="btn /addstudent">Add Student</button>
-<button class = "btn /deletestudent">Delete Student</button>
-<button class = "btn /deleteuniversity">Delete University</button>
+<a href="addUniversity">Add University</a>
+<a href="addservice">Add Service</a>
+<a href="addstudent">Add Student</a>
+<a href="deletestudent">Delete Student</a>
+<a href="deleteuniversity">Delete University</a>
 </form>
 </body>
 </html>

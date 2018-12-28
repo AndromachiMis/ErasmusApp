@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import main.java.gr.hua.erasmus.dbconn.dbconnection;
+
 /**
  * Servlet implementation class LoginServlet
  */
@@ -23,64 +26,40 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	dbconnection connection = new dbconnection();
+
 	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+//		response.setContentType("text/html;charset=UTF-8");
+//		PrintWriter out = response.getWriter();
 		// TODO Auto-generated method stub
+		boolean st = false;
 		String username = request.getParameter("user");
 		String password = request.getParameter("pwd");
-		if(Validate.checkUser(username, password))
-        {
-            RequestDispatcher rs = request.getRequestDispatcher("Welcome");
-            rs.forward(request, response);
-        }
-        else
-        {
-           out.println("Username or Password incorrect");
-           RequestDispatcher rs = request.getRequestDispatcher("index.html");
-           rs.include(request, response);
-        }
-    }  
+		Connection con = connection.condb();
+		
+		try {
+			PreparedStatement ps = con.prepareStatement("select * from users where username=? and password=?");
+			ps.setString(1, username);
+			ps.setString(2, password);			
+			ResultSet rs = ps.executeQuery();
+			st = rs.next();
 
+			if (st) {
+				
+				if (rs.getString("role").equals("headsecretary")) {
+					response.sendRedirect("servicespage.jsp");
+				} else {
+					response.sendRedirect("loginsucces.jsp");
+				}
+			} else {
+				response.sendRedirect("login.jsp");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-
-public static class Validate
-{
-    public static boolean checkUser(String user,String pwd) 
-    {
-     boolean st =false;
-     try{
-
-	 
-        Class.forName("com.mysql.jdbc.Driver");
-
-	 //creating connection with the database 
-        Connection con=DriverManager.getConnection
-                       ("jdbc:mysql:/ /localhost:8080/test","","");
-        PreparedStatement ps =con.prepareStatement
-                            ("select * from students where username=? and password=?");
-        ps.setString(1, user);
-        ps.setString(2, pwd);
-        ResultSet rs =ps.executeQuery();
-        st = rs.next();
-       
-     }catch(Exception e)
-     {
-         e.printStackTrace();
-     }
-        return st;                 
- }   
-}
-
-public class Welcome extends HttpServlet {
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        out.println("Welcome user");
-      }  
-}
 }

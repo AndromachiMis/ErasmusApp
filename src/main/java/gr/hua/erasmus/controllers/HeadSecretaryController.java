@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/headsecretary")
 
 public class HeadSecretaryController {
 
@@ -15,12 +14,12 @@ public class HeadSecretaryController {
 
 	@RequestMapping("/addStudent")
 	public String addStudent() {
-		return "servicespage";
+		return "addstudent";
 	}
 
-	@RequestMapping("/addUniversity")
+	@RequestMapping("/adduniversity")
 	public String addUniversity() {
-		return "servicespage";
+		return "adduniversity";
 	}
 
 	@RequestMapping("/deleteStudent")

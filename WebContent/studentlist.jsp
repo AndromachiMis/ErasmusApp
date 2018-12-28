@@ -32,6 +32,7 @@
        </tr>
     </thead>
     <tbody>
+    <% for (int i=0;;) { %>
       <tr>
         <td></td>
         <td></td> 
@@ -44,7 +45,7 @@
         <td></td>
         <td></td>
         
-              </tr>    
+              </tr>  <% } %>  
     </tbody>
   </table>
 </div>

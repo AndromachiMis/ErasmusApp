@@ -17,7 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import main.java.gr.hua.erasmus.dao.StudentDAOImpl;
 import main.java.gr.hua.erasmus.dbconn.dbconnection;
+import main.java.gr.hua.erasmus.entities.Student;
 
 /**
  * Servlet implementation class LoginServlet
@@ -52,11 +54,13 @@ public class LoginServlet extends HttpServlet {
 				if (rs.getString("role").equals("headsecretary")) {
 					response.sendRedirect("servicespage.jsp");
 				} else {
-					response.sendRedirect("loginsucces.jsp");
+					response.sendRedirect("student.jsp");
 				}
 			} else {
 				response.sendRedirect("login.jsp");
 			}
+			ps.close();
+			rs.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

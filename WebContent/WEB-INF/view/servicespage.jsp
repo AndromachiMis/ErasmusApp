@@ -8,11 +8,10 @@
 </head>
 <body>
 <h2>Select a Service</h2>
-<a href="adduniversity.jsp">Add University</a>
-<a href="addservice.jsp">Add Service</a>
-<a href="addstudent.jsp">Add Student</a>
-<a href="deletestudent.jsp">Delete Student</a>
-<a href="deleteuniversity.jsp">Delete University</a>
-<a href="updatestudent.jsp">Delete University</a>
+<a href="/ErasmusApp/headsecretary/adduniversity">Add University</a>
+<a href="/ErasmusApp/headsecretary/addstudent">Add Student</a>
+<a href="/ErasmusApp/headsecretary/deleteStudent">Delete Student</a>
+<a href="/ErasmusApp/headsecretary/updateuni">Update University</a>
+<a href="/ErasmusApp/headsecretary/updatestud">Update Student</a>
 </body>
 </html>

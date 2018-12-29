@@ -52,12 +52,12 @@ public class LoginServlet extends HttpServlet {
 			if (st) {
 				
 				if (rs.getString("role").equals("headsecretary")) {
-					response.sendRedirect("servicespage.jsp");
+					response.sendRedirect("/ErasmusApp/headsecretary/servicespage");
 				} else {
-					response.sendRedirect("student.jsp");
+					response.sendRedirect("/ErasmusApp/student/studentpage");
 				}
 			} else {
-				response.sendRedirect("login.jsp");
+				response.sendRedirect("/ErasmusApp/");
 			}
 			ps.close();
 			rs.close();

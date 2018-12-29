@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome to Erasmus
-Select a Service from the menu below:
-<a href="form.jsp" >Submit form</a>
-<a href="unilist.jsp">Details for the universities</a>
+Welcome to Erasmus</br>
+Select a Service from the menu below:</br>
+<a href="/ErasmusApp/student/submitForm" >Submit form</a></br>
+<a href="/ErasmusApp/student/universityList">Details for the universities</a>
 
 </body>
 </html>

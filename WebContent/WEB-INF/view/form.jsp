@@ -7,8 +7,8 @@
 <title>Erasmus Form</title>
 </head>
 <body>
-<form action="StudentServlet" method="POST">>
-
+<form action="StudentServlet" method="POST">
+Fill the form:</br>
  Fullname:<br>
   <input type="text" name="fullname">
   <br><br>

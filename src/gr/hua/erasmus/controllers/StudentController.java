@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/student")
 
 public class StudentController {
+	
+	@RequestMapping("/studentpage")
+	public String studentpage() {
+		return "student";
+	}
 
 	@RequestMapping("/submitForm")
 	public String submitForm() {

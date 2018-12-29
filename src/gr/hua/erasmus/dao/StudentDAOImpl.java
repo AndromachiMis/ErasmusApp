@@ -8,16 +8,13 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import gr.hua.erasmus.dbconn.dbconnection;
 import gr.hua.erasmus.entities.Student;
 
 public class StudentDAOImpl implements StudentDAO {
 
 
-	private DataSource dataSource;
-
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-	}
+	dbconnection connection = new dbconnection();
 
 	@Override
 	public void save(Student student) {
@@ -25,7 +22,7 @@ public class StudentDAOImpl implements StudentDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			ps.setInt(1, student.getId());
 			ps.setString(2, student.getFullname());
@@ -63,7 +60,7 @@ public class StudentDAOImpl implements StudentDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			ps.setInt(1, id);
 			rs = ps.executeQuery();
@@ -107,7 +104,7 @@ public class StudentDAOImpl implements StudentDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			ps.setInt(1, student.getId());
 			ps.setString(2, student.getFullname());
@@ -144,7 +141,7 @@ public class StudentDAOImpl implements StudentDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			ps.setInt(1, id);
 			int out = ps.executeUpdate();
@@ -165,13 +162,13 @@ public class StudentDAOImpl implements StudentDAO {
 
 	@Override
 	public List<Student> getAll() {
-		String query = "select id, name, role from Student";
+		String query = "select id, fullname, mothername, fathername, username, password, phone, status, year, grades, lessons from Student";
 		List<Student> studList = new ArrayList<Student>();
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			rs = ps.executeQuery();
 			while(rs.next()){

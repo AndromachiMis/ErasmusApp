@@ -8,16 +8,14 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import gr.hua.erasmus.dbconn.dbconnection;
 import gr.hua.erasmus.entities.Universities;
 
 public class UniversitiesDAOImpl implements UniversitiesDAO {
 
 
-	private DataSource dataSource;
+	dbconnection connection = new dbconnection();
 
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-	}
 
 	@Override
 	public void save(Universities university) {
@@ -25,7 +23,7 @@ public class UniversitiesDAOImpl implements UniversitiesDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			ps.setString(1, university.getId());
 			ps.setString(2, university.getName());
@@ -57,7 +55,7 @@ public class UniversitiesDAOImpl implements UniversitiesDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			ps.setString(1, id);
 			rs = ps.executeQuery();
@@ -95,7 +93,7 @@ public class UniversitiesDAOImpl implements UniversitiesDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			ps.setString(1, university.getId());
 			ps.setString(2, university.getName());
@@ -126,7 +124,7 @@ public class UniversitiesDAOImpl implements UniversitiesDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			ps.setString(1, id);
 			int out = ps.executeUpdate();
@@ -153,7 +151,7 @@ public class UniversitiesDAOImpl implements UniversitiesDAO {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try{
-			con = dataSource.getConnection();
+			con = connection.condb();
 			ps = con.prepareStatement(query);
 			rs = ps.executeQuery();
 			while(rs.next()){

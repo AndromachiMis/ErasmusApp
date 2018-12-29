@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 					response.sendRedirect("/ErasmusApp/student/studentpage");
 				}
 			} else {
-				response.sendRedirect("/ErasmusApp/");
+				response.sendRedirect("/ErasmusApp");
 			}
 			ps.close();
 			rs.close();

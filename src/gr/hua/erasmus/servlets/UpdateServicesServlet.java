@@ -7,20 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import gr.hua.erasmus.dao.StudentDAOImpl;
-import gr.hua.erasmus.entities.Student;
+import gr.hua.erasmus.dao.ServicesDAOImpl;
+import gr.hua.erasmus.entities.Services;
 
-/**
- * Servlet implementation class DeleteStudentServlet
- */
-@WebServlet("/DeleteStudentServlet")
-public class DeleteStudentServlet extends HttpServlet {
+
+
+@WebServlet("/UpdateServicesServlet")
+public class UpdateServicesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public DeleteStudentServlet() {
+    public UpdateServicesServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,9 +39,13 @@ public class DeleteStudentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		Student student = new Student();
-		StudentDAOImpl studentDaoImpl = new StudentDAOImpl();
-		//studentDaoImpl.deleteById(student);
+		String  user_services = request.getParameter("user_services");
+		int headsecretary_id = Integer.parseInt(request.getParameter("headsecretary_id"));
+		int student_id = Integer.parseInt(request.getParameter("student_id"));
+		
+		Services serv = new Services();
+		ServicesDAOImpl servDaoImpl = new ServicesDAOImpl();
+		servDaoImpl.save(serv);
 	}
 
 }

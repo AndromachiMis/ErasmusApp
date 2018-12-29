@@ -42,7 +42,7 @@ public class AddStudentServlet extends HttpServlet {
 		String fullname = request.getParameter("fullname");
 		String fathername = request.getParameter("fname");
 		String mothername = request.getParameter("mname");
-		 int phone = Integer.parseInt(request.getParameter("phone"));
+		int phone = Integer.parseInt(request.getParameter("phone"));
 		String status = request.getParameter("status");
 		String year = request.getParameter("year");
 		//double grades = (request.getParameter("grades"));

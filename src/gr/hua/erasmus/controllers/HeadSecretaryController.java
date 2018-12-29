@@ -32,4 +32,14 @@ public class HeadSecretaryController {
 	public String deleteUniversity() {
 		return "servicespage";
 	}
+
+	@RequestMapping("/updateuni")
+	public String updateuni() {
+		return "updateuniversity";
+	}
+
+	@RequestMapping("/updatestud")
+	public String updatestud() {
+		return "updatestudent";
+	}
 }

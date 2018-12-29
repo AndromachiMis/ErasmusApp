@@ -26,10 +26,10 @@
     </thead>
     <tbody>
       <tr>
-        <td>Harokopio University</td>
-        <td>hua112</td>
-        <td>Athens, Greece</td>
-        <td>20</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>    
     </tbody>
   </table>

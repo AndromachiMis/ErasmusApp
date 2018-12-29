@@ -7,7 +7,7 @@
 <title>Insert a new University into University Erasmus List</title>
 </head>
 <body>
-<form action="AddUniversity" method="POST">
+<form action="AddUniversityServlet" method="POST">
   Insert the id of the University:<br>
   <input type="text" name="id">
   <br><br>

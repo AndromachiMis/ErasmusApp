@@ -8,10 +8,11 @@
 </head>
 <body>
 <h2>Select a Service</h2>
-<a href="ErasmusApp/WebContent/WEB-INF/adduniversity.jsp">Add University</a>
-<a href="addservice">Add Service</a>
-<a href="addstudent">Add Student</a>
-<a href="deletestudent">Delete Student</a>
-<a href="deleteuniversity">Delete University</a>
+<a href="adduniversity.jsp">Add University</a>
+<a href="addservice.jsp">Add Service</a>
+<a href="addstudent.jsp">Add Student</a>
+<a href="deletestudent.jsp">Delete Student</a>
+<a href="deleteuniversity.jsp">Delete University</a>
+<a href="updatestudent.jsp">Delete University</a>
 </body>
 </html>

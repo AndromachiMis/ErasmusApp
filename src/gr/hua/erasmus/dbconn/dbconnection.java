@@ -6,8 +6,8 @@ import java.sql.DriverManager;
 public class dbconnection {
 	
 	String jdbcUrl = "jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false&serverTimezone=UTC";
-//    String user = "it21489";
-//    String pass = "changeit";
+   // String user = "it21489";
+   // String pass = "root";
     String user = "root";
     String pass = "root";
     

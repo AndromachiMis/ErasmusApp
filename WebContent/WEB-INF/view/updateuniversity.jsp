@@ -7,19 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="UpdateUniversityServlet" method="POST">
-Insert the id of the University you want to Update:
-<input type = "text" name="id" />
-</br></br>
- Name of University: <br>
-<input type="text" name="name" />
-</br></br>
-Location: <br>
-<input type="text" name="location"/>
-</br></br>
-Number of Acceptants: <br>
-<input type="text" name="num_acceptants"/>
-</br></br>
+<form action="UpdateUniversitiesServlet" method="POST">
+Insert the id of the University you want to Update: <input type = "number" name="id">
+<br><br>
+  Insert the new name of University: <input type="text" name="name">
+  <br><br>
+  Insert the new location of the University: <input type="text" name="location">
+  <br><br>
+  Insert the new number of acceptants: <input type="number" name="num_acceptants"> 
+  <br><br>
  <input type="submit" value="Update">
 </form>
 </body>

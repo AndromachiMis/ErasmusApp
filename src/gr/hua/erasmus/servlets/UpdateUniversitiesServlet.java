@@ -39,16 +39,16 @@ public class UpdateUniversitiesServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		int id = Integer.parseInt(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("id"));		
 		String name = request.getParameter("name");
 		String location = request.getParameter("location");
-		int num_acceptants = Integer.parseInt(request.getParameter("num_acceptants"));
-		int student_id= Integer.parseInt(request.getParameter("student_id"));
+		int num_acceptants = Integer.parseInt(request.getParameter("num_acceptants"));		
 		
-		
-		Universities uni = new Universities();
+		Universities uni = new Universities(id, name, location, num_acceptants);
 		UniversitiesDAOImpl uniDaoImpl = new UniversitiesDAOImpl();
 		uniDaoImpl.update(uni);
+		
+		response.sendRedirect("servicespage");
 	}
 
 }

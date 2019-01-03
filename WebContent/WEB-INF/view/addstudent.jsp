@@ -8,27 +8,26 @@
 </head>
 <body>
 <form action="AddStudentServlet" method="POST">
-Username: <br>
-<input type="text" name="user" /></br>
-Password: <br>
-<input type="text" name="pass"/></br>
-Fullname: <br>
-<input type="text" name="name"/></br>
-Fathername:<br>
-<input type="text" name="fname"/></br>
-Mothername: <br>
- <input type="text" name="mname"/></br>
-Phone: <br>
- <input type="text" name="phone"/></br>
-Status: <br> 
-<input type="text" name="status"/></br>
-Year: <br>
- <input type="text" name="year"/></br>
-Grades: <br>
- <input type="text" name="grades"/></br>
-Lessons:<br>
- <input type="text" name="les"/></br>
- 
+Username: <input type="text" name="username">
+<br><br>
+Password: <input type="text" name="password">
+<br><br>
+Fullname: <input type="text" name="fullname">
+<br><br>
+Fathername: <input type="text" name="fathername">
+<br><br>
+Mothername:  <input type="text" name="mothername">
+<br><br>
+Phone: <input type="number" name="phone">
+<br><br>
+Status: <input type="text" name="status">
+<br><br>
+Year:  <input type="text" name="year">
+<br><br>
+Grades:  <input type="number" name="grades">
+<br><br>
+Lessons: <input type="number" name="lessons">
+<br><br>
   <input type="submit" value="Submit">
   </form>
 </body>

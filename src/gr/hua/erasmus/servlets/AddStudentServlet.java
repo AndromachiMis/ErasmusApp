@@ -40,17 +40,20 @@ public class AddStudentServlet extends HttpServlet {
 		String  username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String fullname = request.getParameter("fullname");
-		String fathername = request.getParameter("fname");
-		String mothername = request.getParameter("mname");
+		String fathername = request.getParameter("fathername");
+		String mothername = request.getParameter("mothername");
 		int phone = Integer.parseInt(request.getParameter("phone"));
 		String status = request.getParameter("status");
 		String year = request.getParameter("year");
-		//double grades = (request.getParameter("grades"));
+		int grades= Integer.parseInt(request.getParameter("grades"));
 		int lessons= Integer.parseInt(request.getParameter("lessons"));
 		
-		Student student = new Student();
+		Student student = new Student(username, password, fullname, fathername, mothername, phone, status, year, grades, lessons);
 		StudentDAOImpl studentDaoImpl = new StudentDAOImpl();
 		studentDaoImpl.save(student);
+		
+		response.sendRedirect("servicespage");
+		
 	}
 
 }

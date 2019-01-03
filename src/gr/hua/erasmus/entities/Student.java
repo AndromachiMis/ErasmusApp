@@ -14,7 +14,7 @@ public class Student implements Serializable {
 	private int phone;
 	private String status;
 	private String year;
-	private double grades;
+	private int grades;
 	private int lessons;
 	private String collabuni;
 
@@ -22,15 +22,15 @@ public class Student implements Serializable {
 		super();
 	}
 
-	public Student(String fullname, String fathername, String mothername, int id, String username, String password,
-			int phone, String status, String year, double grades, int lessons, String collabuni) {
+	public Student(int id, String username, String password, String fullname, String fathername, String mothername, 
+			int phone, String status, String year, int grades, int lessons, String collabuni) {
 		super();
-		this.fullname = fullname;
-		this.fathername = fathername;
-		this.mothername = mothername;
 		this.id = id;
 		this.username = username;
 		this.password = password;
+		this.fullname = fullname;
+		this.fathername = fathername;
+		this.mothername = mothername;
 		this.phone = phone;
 		this.status = status;
 		this.year = year;
@@ -38,6 +38,48 @@ public class Student implements Serializable {
 		this.lessons = lessons;
 		this.collabuni = collabuni;
 	}
+	
+	
+	public Student(String username, String password, String fullname, String fathername, String mothername, 
+			int phone, String status, String year, int grades, int lessons) {
+		super();
+		this.username = username;
+		this.password = password;
+		this.fullname = fullname;
+		this.fathername = fathername;
+		this.mothername = mothername;
+		this.phone = phone;
+		this.status = status;
+		this.year = year;
+		this.grades = grades;
+		this.lessons = lessons;
+	}
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
 
 	public String getFullname() {
 		return fullname;
@@ -63,29 +105,6 @@ public class Student implements Serializable {
 		this.mothername = mothername;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
 
 	public int getPhone() {
 		return phone;
@@ -111,11 +130,11 @@ public class Student implements Serializable {
 		this.year = year;
 	}
 
-	public double getGrades() {
+	public int getGrades() {
 		return grades;
 	}
 
-	public void setGrades(double grades) {
+	public void setGrades(int grades) {
 		this.grades = grades;
 	}
 

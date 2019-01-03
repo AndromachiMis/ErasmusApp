@@ -8,17 +8,11 @@
 </head>
 <body>
 <form action="AddUniversityServlet" method="POST">
-  Insert the id of the University:<br>
-  <input type="text" name="id">
+  Insert the name of University: <input type="text" name="name">
   <br><br>
-  Insert the name of University:<br>
-  <input type="text" name="name">
+  Insert the location of the University: <input type="text" name="location">
   <br><br>
-  Insert the location of the University:<br>
-  <input type="text" name="location">
-  <br><br>
-  Insert the number of acceptants:<br>
-  <input type="text" name="location"> 
+  Insert the number of acceptants: <input type="number" name="num_acceptants"> 
   <br><br>
   <input type="submit" value="Submit">
 </form> 

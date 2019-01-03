@@ -37,16 +37,15 @@ public class AddUniversitiesServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String location = request.getParameter("location");
 		int num_acceptants = Integer.parseInt(request.getParameter("num_acceptants"));
-		int student_id = Integer.parseInt(request.getParameter("student_id"));
 		
-		Universities uni = new Universities();
+		Universities uni = new Universities(name, location, num_acceptants);
 		UniversitiesDAOImpl uniDaoImpl = new UniversitiesDAOImpl();
 		uniDaoImpl.save(uni);
 		
+		response.sendRedirect("servicespage");
 	}
 
 }

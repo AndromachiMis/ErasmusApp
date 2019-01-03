@@ -10,7 +10,7 @@ public interface UniversitiesDAO {
 	
 	public void save (Universities university);
 	
-	public Universities getById(String id);
+	public Universities getById(int id);
 
 	public void update(Universities university);
 	

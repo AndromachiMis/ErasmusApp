@@ -18,23 +18,22 @@ public class StudentDAOImpl implements StudentDAO {
 
 	@Override
 	public void save(Student student) {
-		String query = "insert into Student (id, fullname, mothername, fathername, username, password, phone, status, year, grades, lessons) values (?,?,?,?,?,?,?,?,?,?,?)";
+		String query = "insert into Student (username, password, fullname, fathername, mothername, phone, status, year, grades, lessons) values (?,?,?,?,?,?,?,?,?,?)";
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
 			con = connection.condb();
 			ps = con.prepareStatement(query);
-			ps.setInt(1, student.getId());
-			ps.setString(2, student.getFullname());
-			ps.setString(3, student.getMothername());
+			ps.setString(1, student.getUsername());
+			ps.setString(2, student.getPassword());
+			ps.setString(3, student.getFullname());
 			ps.setString(4, student.getFathername());
-			ps.setString(5, student.getUsername());
-			ps.setString(6, student.getPassword());
-			ps.setInt(7, student.getPhone());
-			ps.setString(8, student.getStatus());
-			ps.setString(9, student.getYear());
-			ps.setDouble(10, student.getGrades());
-			ps.setInt(11, student.getLessons());
+			ps.setString(5, student.getMothername());
+			ps.setInt(6, student.getPhone());
+			ps.setString(7, student.getStatus());
+			ps.setString(8, student.getYear());
+			ps.setInt(9, student.getGrades());
+			ps.setInt(10, student.getLessons());
 			
 			int out = ps.executeUpdate();
 			if(out !=0){
@@ -54,7 +53,7 @@ public class StudentDAOImpl implements StudentDAO {
 
 	@Override
 	public Student getById(int id) {
-		String query = "select fullname, mothername, fathername, username, password, phone, status, year, grades, lessons from Student where id = ?";
+		String query = "select username, password, fullname, fathername, mothername, phone, status, year, grades, lessons from Student where id = ?";
 		Student stud = null;
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -67,11 +66,11 @@ public class StudentDAOImpl implements StudentDAO {
 			if(rs.next()){
 				stud = new Student();
 				stud.setId(id);
-				stud.setFullname(rs.getString("fullname"));
-				stud.setMothername(rs.getString("mothername"));
-				stud.setFathername(rs.getString("fathername"));
 				stud.setUsername(rs.getString("username"));
 				stud.setPassword(rs.getString("password"));
+				stud.setFullname(rs.getString("fullname"));
+				stud.setFathername(rs.getString("fathername"));
+				stud.setMothername(rs.getString("mothername"));
 				stud.setPhone(rs.getInt("phone"));
 				stud.setStatus(rs.getString("status"));
 				stud.setYear(rs.getString("year"));
@@ -100,23 +99,22 @@ public class StudentDAOImpl implements StudentDAO {
 
 	@Override
 	public void update(Student student) {
-		String query = "update Student set fullname=?, mothername=?, fathername=?, username=?, password=?, phone=?, status=? year=?, grades=?, lessons=? where id=?";
+		String query = "update Student set username=?, password=?, fullname=?, fathername=?, mothername=?, phone=?, status=? year=?, grades=?, lessons=? where id=?";
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
 			con = connection.condb();
 			ps = con.prepareStatement(query);
-			ps.setInt(1, student.getId());
-			ps.setString(2, student.getFullname());
-			ps.setString(3, student.getMothername());
+			ps.setString(1, student.getUsername());
+			ps.setString(2, student.getPassword());
+			ps.setString(3, student.getFullname());
 			ps.setString(4, student.getFathername());
-			ps.setString(5, student.getUsername());
-			ps.setString(6, student.getPassword());
-			ps.setInt(7, student.getPhone());
-			ps.setString(8, student.getStatus());
-			ps.setString(9, student.getYear());
-			ps.setDouble(10, student.getGrades());
-			ps.setInt(11, student.getLessons());
+			ps.setString(5, student.getMothername());
+			ps.setInt(6, student.getPhone());
+			ps.setString(7, student.getStatus());
+			ps.setString(8, student.getYear());
+			ps.setInt(9, student.getGrades());
+			ps.setInt(10, student.getLessons());
 			
 			int out = ps.executeUpdate();
 			
@@ -162,7 +160,7 @@ public class StudentDAOImpl implements StudentDAO {
 
 	@Override
 	public List<Student> getAll() {
-		String query = "select id, fullname, mothername, fathername, username, password, phone, status, year, grades, lessons from Student";
+		String query = "select id, username, password, fullname, fathername, mothername, phone, status, year, grades, lessons from Student";
 		List<Student> studList = new ArrayList<Student>();
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -174,11 +172,11 @@ public class StudentDAOImpl implements StudentDAO {
 			while(rs.next()){
 				Student stud = new Student();
 				stud.setId(rs.getInt("id"));
-				stud.setFullname(rs.getString("fullname"));
-				stud.setMothername(rs.getString("mothername"));
-				stud.setFathername(rs.getString("fathername"));
 				stud.setUsername(rs.getString("username"));
 				stud.setPassword(rs.getString("password"));
+				stud.setFullname(rs.getString("fullname"));
+				stud.setFathername(rs.getString("fathername"));
+				stud.setMothername(rs.getString("mothername"));
 				stud.setPhone(rs.getInt("phone"));
 				stud.setStatus(rs.getString("status"));
 				stud.setYear(rs.getString("year"));
@@ -202,6 +200,3 @@ public class StudentDAOImpl implements StudentDAO {
 	}
 
 }
-
-
-

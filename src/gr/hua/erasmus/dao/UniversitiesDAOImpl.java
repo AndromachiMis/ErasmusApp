@@ -84,7 +84,7 @@ public class UniversitiesDAOImpl implements UniversitiesDAO {
 
 	@Override
 	public void update(Universities university) {
-		String query = "update University set id=?, name=?, location=?, num_acceptants=? from Universities where id=?";
+		String query = "update Universities set name=?, location=?, num_acceptants=? where id=?";
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
@@ -99,7 +99,7 @@ public class UniversitiesDAOImpl implements UniversitiesDAO {
 			
 			if(out !=0){
 				System.out.println("University updated with id=" + university.getId());
-			}else System.out.println("No Student found with id=" + university.getId());
+			}else System.out.println("No University found with id=" + university.getId());
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{

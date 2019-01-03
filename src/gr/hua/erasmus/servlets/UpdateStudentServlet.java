@@ -40,21 +40,23 @@ public class UpdateStudentServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		int id = Integer.parseInt(request.getParameter("id"));
-		String  username = request.getParameter("user");
-		String password = request.getParameter("pass");
-		String fullname = request.getParameter("name");
-		String fathername = request.getParameter("fname");
-		String mothername = request.getParameter("mname");
+		String  username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String fullname = request.getParameter("fullname");
+		String fathername = request.getParameter("fathername");
+		String mothername = request.getParameter("mothername");
 		 int phone = Integer.parseInt(request.getParameter("phone"));
 		String status = request.getParameter("status");
 		String year = request.getParameter("year");
-		//Double grades = request.getParameter("grades");
-		int lessons= Integer.parseInt(request.getParameter("les"));
+		int grades= Integer.parseInt(request.getParameter("grades"));
+		int lessons= Integer.parseInt(request.getParameter("lessons"));
 		
 		
-		Student student = new Student();
+		Student student = new Student(id, username, password, fullname, fathername, mothername, phone, status, year, grades, lessons);
 		StudentDAOImpl studentDaoImpl = new StudentDAOImpl();
 		studentDaoImpl.update(student);
+		
+		response.sendRedirect("servicespage");
 	}
 
 }

@@ -15,19 +15,19 @@ Insert the id of the Student you want to Update:
 <input type="text" name="user" />
 </br></br>
 Password: <br>
-<input type="text" name="pass"/>
+<input type="text" name="password"/>
 </br></br>
 Fullname: <br>
-<input type="text" name="name"/>
+<input type="text" name="fullname"/>
 </br></br>
 Fathername:<br>
-<input type="text" name="fname"/>
+<input type="text" name="fathername"/>
 </br></br>
 Mothername: <br>
- <input type="text" name="mname"/>
+ <input type="text" name="mothername"/>
  </br></br>
 Phone: <br>
- <input type="text" name="pone"/>
+ <input type="number" name="phone"/>
  </br></br>
 Status: <br> 
 <input type="text" name="status"/>
@@ -36,10 +36,10 @@ Year: <br>
  <input type="text" name="year"/>
  </br></br>
 Grades: <br>
- <input type="text" name="grades"/>
+ <input type="number" name="grades"/>
  </br></br>
 Lessons:<br>
- <input type="text" name="les"/>
+ <input type="number" name="lessons"/>
   </br></br>
   <input type="submit" value="Update">
 </form>

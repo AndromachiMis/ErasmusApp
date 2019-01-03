@@ -23,7 +23,7 @@ public class Student implements Serializable {
 	}
 
 	public Student(int id, String username, String password, String fullname, String fathername, String mothername, 
-			int phone, String status, String year, int grades, int lessons, String collabuni) {
+			int phone, String status, String year, int grades, int lessons) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -36,7 +36,6 @@ public class Student implements Serializable {
 		this.year = year;
 		this.grades = grades;
 		this.lessons = lessons;
-		this.collabuni = collabuni;
 	}
 	
 	

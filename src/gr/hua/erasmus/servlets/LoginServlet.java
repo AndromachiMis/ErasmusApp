@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 					response.sendRedirect("studentpage");
 				}
 			} else {
-				response.sendRedirect("");
+				response.sendRedirect("invalidlogin");
 			}
 			ps.close();
 			rs.close();

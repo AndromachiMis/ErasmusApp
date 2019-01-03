@@ -10,6 +10,10 @@ public class HomeController {
 	public String index() {
 		return "index";
 	}
-
+	
+	@RequestMapping("invalidlogin")
+	public String invalidlogin() {
+		return "invalidlogin";
+	}
 
 }

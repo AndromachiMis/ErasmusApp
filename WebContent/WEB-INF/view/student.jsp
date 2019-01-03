@@ -9,8 +9,8 @@
 <body>
 Welcome to Erasmus</br>
 Select a Service from the menu below:</br>
-<a href="/ErasmusApp/student/submitForm" >Submit form</a></br>
-<a href="/ErasmusApp/student/universityList">Details for the universities</a>
+<a href="submitForm" >Submit form</a></br>
+<a href="universityList">Details for the universities</a>
 
 </body>
 </html>

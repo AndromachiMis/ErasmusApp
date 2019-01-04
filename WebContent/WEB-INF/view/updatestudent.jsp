@@ -31,7 +31,7 @@ Phone: <br>
  </br></br>
 Status: <br> 
 <input type="text" name="status"/>
->/br></br>
+ </br></br>
 Year: <br>
  <input type="text" name="year"/>
  </br></br>

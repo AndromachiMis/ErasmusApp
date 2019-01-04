@@ -8,7 +8,7 @@
 </head>
 <body>
 	<center>Sorry, your username or password is incorrect! Please
-		try again! </br><a href="/">Try Again</a></center>
+		try again! </br><a href="">Try Again</a></center>
 		
 </body>
 </html>

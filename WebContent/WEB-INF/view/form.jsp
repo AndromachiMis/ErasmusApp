@@ -29,8 +29,8 @@ Fill the form:</br>
    <input type="radio" name="year" value="4"> 4<br>
    <br><br>
    Choose the number of courses in which you don't have an accessible grade:<br>
-   <input type="radio" name="lessons" value="greater than 5" checked> 5<br>
-   <input type="radio" name="lessons" value="less than 5">5<br>
+   <input type="radio" name="lessons" value="greater than 5" checked>greater than 5<br>
+   <input type="radio" name="lessons" value="less than 5">equal or less than 5<br>
    <br><br>
    Choose Universities from the list below:<br>
    <br><br>   

@@ -47,4 +47,9 @@ public class HeadSecretaryController {
 	public String updatestud() {
 		return "updatestudent";
 	}
+
+	@RequestMapping("/studentlist")
+	public String seeallstudents() {
+		return "studentlist";
+	}
 }

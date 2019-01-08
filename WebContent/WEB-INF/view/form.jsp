@@ -1,22 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.sql.PreparedStatement" %> 
+<%@ page import="java.sql.Statement" %> 
+<%@ page import="java.sql.Connection" %>	
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.DriverManager" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Erasmus Form</title>
+<% Connection con = null;
+Class.forName("com.mysql.cj.jdbc.Driver");
+String jdbcUrl = "jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false&serverTimezone=UTC";
+String user = "root";
+String pass = "root";
+String query="select * from universities";
+try
+{
+con = DriverManager.getConnection(jdbcUrl, user, pass);
+} catch (Exception e) {
+ e.printStackTrace();
+ } %>
 </head>
 <body>
 <form action="StudentServlet" method="POST">
 Fill the form:</br>
- Fullname:<br>
-  <input type="text" name="fullname">
-  <br><br>
   Id:<br>
   <input type="text" name="id">
   <br><br>
    Username:<br>
   <input type="text" name="usernmae">
+  <br><br>
+   Fullname:<br>
+  <input type="text" name="fullname">
   <br><br>
   Fathername:<br>
   <input type="text" name="fname">
@@ -25,16 +42,19 @@ Fill the form:</br>
   <input type="text" name="mname">
   <br><br>  
   Choose the year of your studies:<br>
-   <input type="radio" name="year" value="3" checked> 3<br>
-   <input type="radio" name="year" value="4"> 4<br>
+   <input type="number" name="year" /><br>
    <br><br>
    Choose the number of courses in which you don't have an accessible grade:<br>
-   <input type="radio" name="lessons" value="greater than 5" checked>greater than 5<br>
-   <input type="radio" name="lessons" value="less than 5">equal or less than 5<br>
+   <input type="number" name="lessons" /><br>
    <br><br>
-   Choose Universities from the list below:<br>
+   Choose Universities from the list below (max 3 universities):<br>
+   <% Statement stmt=con.createStatement();
+   	ResultSet rs=stmt.executeQuery(query);
+   	while(rs.next()) {  %>
+   <input type="checkbox" name="unis" value="<%=rs.getString("name") %>" /><%=rs.getString("name") %>
+   <% } %>
    <br><br>   
-   Do you have the appropriate language certificate?<br>
+   Do you have the appropriate language certificates?<br>
    <input type="radio" name="cert" value="Yes" checked>Yes<br>
    <input type="radio" name="cert" value="No">No<br>
    <br><br>

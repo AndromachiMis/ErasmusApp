@@ -44,7 +44,7 @@ public class UpdateUniversitiesServlet extends HttpServlet {
 		String location = request.getParameter("location");
 		int num_acceptants = Integer.parseInt(request.getParameter("num_acceptants"));		
 		
-		Universities uni = new Universities(id, name, location, num_acceptants);
+		Universities uni = new Universities (id, name, location, num_acceptants);
 		UniversitiesDAOImpl uniDaoImpl = new UniversitiesDAOImpl();
 		uniDaoImpl.update(uni);
 		

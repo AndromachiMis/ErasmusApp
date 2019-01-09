@@ -13,7 +13,7 @@
 <% Connection con = null;
 Class.forName("com.mysql.cj.jdbc.Driver");
 String jdbcUrl = "jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false&serverTimezone=UTC";
-// String user = "it21489";
+//String user = "it21489";
 String user = "root";
 String pass = "root";
 String query="select * from universities";
@@ -31,19 +31,19 @@ Fill the form:</br>
   <input type="text" name="id">
   <br><br>
    Username:<br>
-  <input type="text" name="usernmae">
+  <input type="text" name="username">
   <br><br>
    Fullname:<br>
   <input type="text" name="fullname">
   <br><br>
   Fathername:<br>
-  <input type="text" name="fname">
+  <input type="text" name="fathername">
   <br><br>
    Mothername:<br>
-  <input type="text" name="mname">
+  <input type="text" name="mothername">
   <br><br>  
   Choose the year of your studies:<br>
-   <input type="text" name="year" /><br>
+   <input type="number" name="year" /><br>
    <br><br>
    Choose the number of courses in which you don't have an accessible grade:<br>
    <input type="number" name="lessons" /><br>

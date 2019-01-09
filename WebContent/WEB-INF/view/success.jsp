@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>success</title>
 </head>
 <body>
-<center>Your form has submitted succesfully </br><a href="studentpage">Return to the main menu</a></center>
+<center>Your form has submitted succesfully </br><a href="student">Return to the main menu</a></center>
 
 </body>
 </html>

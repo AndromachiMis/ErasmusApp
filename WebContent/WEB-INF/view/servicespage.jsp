@@ -15,6 +15,7 @@
 	<li><a href="updateuni">Update University</a></li>
 	<li><a href="updatestud">Update Student</a></li>
 	<li><a href="studentlist">See all Students</a></li>
+	
 </ul>
 </body>
 </html>

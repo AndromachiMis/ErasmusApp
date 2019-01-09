@@ -59,8 +59,9 @@ public class StudentServlet extends HttpServlet {
 		}
 		
 		if (valid) {
-			
+			response.sendRedirect("invalidlogin");
 		} else {
+			response.sendRedirect("fail");
 			
 		}
 	}

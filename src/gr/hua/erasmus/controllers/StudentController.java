@@ -21,5 +21,6 @@ public class StudentController {
 	public String universityList() {
 		return "unilist";
 	}
+	
 
 }

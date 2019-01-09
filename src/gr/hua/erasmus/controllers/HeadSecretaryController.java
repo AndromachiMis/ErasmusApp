@@ -29,13 +29,13 @@ public class HeadSecretaryController {
 
 	@RequestMapping("/deleteStudent")
 	public String deleteStudent() {
-		return "servicespage";
+		return "deletestudent";
 
 	}
 
 	@RequestMapping("/deleteUniverity")
 	public String deleteUniversity() {
-		return "servicespage";
+		return "deleteuni";
 	}
 
 	@RequestMapping("/updateuni")

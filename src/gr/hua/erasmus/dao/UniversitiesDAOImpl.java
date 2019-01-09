@@ -113,14 +113,14 @@ public class UniversitiesDAOImpl implements UniversitiesDAO {
 	}
 
 	@Override
-	public void deleteById(String id) {
+	public void deleteById(int id) {
 		String query = "delete from Universities where id=?";
 		Connection con = null;
 		PreparedStatement ps = null;
 		try{
 			con = connection.condb();
 			ps = con.prepareStatement(query);
-			ps.setString(1, id);
+			ps.setInt(1, id);
 			int out = ps.executeUpdate();
 			if(out !=0){
 				System.out.println("university deleted with id=" + id);

@@ -14,7 +14,7 @@ public interface UniversitiesDAO {
 
 	public void update(Universities university);
 	
-	public void deleteById(String id);
+	public void deleteById(int id);
 	
 	public List<Universities> getAll();
 }

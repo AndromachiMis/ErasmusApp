@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>fail</title>
 </head>
 <body>
-<center>Sorry, your information is incorrect! You are not elligible for the Erasmus  </br><a href="submitForm">Submit form again</a><a href="student">Return to the main menu</a></center>
+<center>Sorry, your information is incorrect! You are not elligible for the Erasmus  </br><a href="submitForm">Submit form again</a></br><a href="studentpage">Return to the main menu</a></center>
 </body>
 </html>

@@ -21,6 +21,15 @@ public class StudentController {
 	public String universityList() {
 		return "unilist";
 	}
+		
+	@RequestMapping("success")
+	public String successedForm() {
+		return "success";
+	}
 	
-
+	@RequestMapping("fail")
+	public String failedForm() {
+		return "fail";
+	}
+	
 }

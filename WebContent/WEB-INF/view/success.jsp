@@ -7,7 +7,7 @@
 <title>success</title>
 </head>
 <body>
-<center>Your form has submitted succesfully </br><a href="student">Return to the main menu</a></center>
+	<center>Your form has submitted succesfully </br><a href="studentpage">Return to the main menu</a></center>
 
 </body>
 </html>

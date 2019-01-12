@@ -16,7 +16,7 @@
 	<li><a href="updatestud">Update Student</a></li>
 	<li><a href="studentlist">See all Students</a></li>
 	<li><a href="deleteUniverity">Delete University</a></li>
-	
+	<li><a href="logout">Logout</a></li>
 	
 </ul>
 </body>

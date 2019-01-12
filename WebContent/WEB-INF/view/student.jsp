@@ -10,7 +10,8 @@
 Welcome to Erasmus</br>
 Select a Service from the menu below:</br>
 <a href="submitForm" >Submit form</a></br>
-<a href="universityList">Details for the universities</a>
+<a href="universityList">Details for the universities</a></br>
+<a href="logout" >Logout</a></br>
 
 </body>
 </html>

@@ -32,4 +32,9 @@ public class StudentController {
 		return "fail";
 	}
 	
+	@RequestMapping("/studentlogout")
+	public String studentLogout() {
+		return "logout";
+	}
+	
 }

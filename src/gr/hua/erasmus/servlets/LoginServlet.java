@@ -17,9 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import gr.hua.erasmus.dao.StudentDAOImpl;
 import gr.hua.erasmus.dbconn.dbconnection;
-import gr.hua.erasmus.entities.Student;
 
 /**
  * Servlet implementation class LoginServlet

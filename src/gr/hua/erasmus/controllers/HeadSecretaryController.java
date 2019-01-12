@@ -52,4 +52,10 @@ public class HeadSecretaryController {
 	public String seeallstudents() {
 		return "studentlist";
 	}
+	
+	@RequestMapping("/logout")
+	public String logout() {
+		return "logout";
+	}
+	
 }

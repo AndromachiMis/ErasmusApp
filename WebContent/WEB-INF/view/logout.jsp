@@ -10,7 +10,9 @@
        <center>Are you sure you want to disconnect?</br>
        <form action="LogoutServlet" method="post">
 
-                <input type="submit" value="Logout">
+                <input type="submit" value="Logout"></br>
+                <a href="javascript:history.back()">If not, return back</a>
+                
 
         </form></center>
 </body>

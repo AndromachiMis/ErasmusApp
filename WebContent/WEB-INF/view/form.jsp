@@ -13,8 +13,8 @@
 <% Connection con = null;
 Class.forName("com.mysql.cj.jdbc.Driver");
 String jdbcUrl = "jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false&serverTimezone=UTC";
-//String user = "it21489";
-String user = "root";
+String user = "it21489";
+//String user = "root";
 String pass = "root";
 String query="select * from universities";
 try
@@ -52,7 +52,7 @@ Fill the form:</br>
    <% Statement stmt=con.createStatement();
    	ResultSet rs=stmt.executeQuery(query);
    	while(rs.next()) {  %>
-   <input type="checkbox" name="unis" value="<%=rs.getString("name") %>" /><%=rs.getString("name") %>
+   <input type="checkbox" name="universities" value="<%=rs.getString("name") %>" /><%=rs.getString("name") %>
    <% } %>
    <br><br>   
    Do you have the appropriate language certificates?<br>

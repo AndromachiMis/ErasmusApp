@@ -8,7 +8,8 @@
 </head>
 <body>
 <form action="DeleteStudentServlet" method="POST">
-  Insert the id of Student: <input type="text" name="id">
+  Insert the id of Student: <input type="text" name="id"></br>
+  <input type="submit" value="Delete Student"> </form>
   <br><br>
 
 </body>

@@ -1,60 +1,53 @@
 package gr.hua.erasmus.entities;
 
-import java.io.Serializable;
-
-public class Student implements Serializable {
-	private static final long serialVersionUID = 3502277722733264638L;
-
+public class Form {
+	
 	private int id;
 	private String username;
-	private String password;
 	private String fullname;
 	private String fathername;
 	private String mothername;
 	private int phone;
-	private String status;
 	private int year;
-	private int grades;
 	private int lessons;
-	private String collabuni;
-
-	public Student() {
-		super();
-	}
-
-	public Student(int id, String username, String password, String fullname, String fathername, String mothername, 
-			int phone, String status, int year, int grades, int lessons) {
+	private String[] universities;
+	private String cert;
+	
+	public Form(int id, String username, String fullname, String fathername, String mothername, int phone, int year,
+			int lessons, String[] universities, String cert) {
 		super();
 		this.id = id;
 		this.username = username;
-		this.password = password;
 		this.fullname = fullname;
 		this.fathername = fathername;
 		this.mothername = mothername;
 		this.phone = phone;
-		this.status = status;
 		this.year = year;
-		this.grades = grades;
 		this.lessons = lessons;
+		this.universities = universities;
+		this.cert = cert;
 	}
 	
 	
-	public Student(String username, String password, String fullname, String fathername, String mothername, 
-			int phone, String status, int year, int grades, int lessons) {
+
+	public Form(String username, String fullname, String fathername, String mothername, int phone, int year,
+			int lessons, String[] universities, String cert) {
 		super();
 		this.username = username;
-		this.password = password;
 		this.fullname = fullname;
 		this.fathername = fathername;
 		this.mothername = mothername;
 		this.phone = phone;
-		this.status = status;
 		this.year = year;
-		this.grades = grades;
 		this.lessons = lessons;
+		this.universities = universities;
+		this.cert = cert;
 	}
-	
-	
+
+	public Form() {
+		super();
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -70,15 +63,6 @@ public class Student implements Serializable {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
 
 	public String getFullname() {
 		return fullname;
@@ -104,21 +88,12 @@ public class Student implements Serializable {
 		this.mothername = mothername;
 	}
 
-
 	public int getPhone() {
 		return phone;
 	}
 
 	public void setPhone(int phone) {
 		this.phone = phone;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
 	}
 
 	public int getYear() {
@@ -129,14 +104,6 @@ public class Student implements Serializable {
 		this.year = year;
 	}
 
-	public int getGrades() {
-		return grades;
-	}
-
-	public void setGrades(int grades) {
-		this.grades = grades;
-	}
-
 	public int getLessons() {
 		return lessons;
 	}
@@ -145,11 +112,19 @@ public class Student implements Serializable {
 		this.lessons = lessons;
 	}
 
-	public String getCollabuni() {
-		return collabuni;
+	public String[] getUniversities() {
+		return universities;
 	}
 
-	public void setCollabuni(String collabuni) {
-		this.collabuni = collabuni;
+	public void setUniversities(String[] universities) {
+		this.universities = universities;
+	}
+
+	public String getCert() {
+		return cert;
+	}
+
+	public void setCert(String cert) {
+		this.cert = cert;
 	}
 }

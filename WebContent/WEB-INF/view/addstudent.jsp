@@ -22,7 +22,7 @@ Phone: <input type="number" name="phone">
 <br><br>
 Status: <input type="text" name="status">
 <br><br>
-Year:  <input type="text" name="year">
+Year:  <input type="number" name="year">
 <br><br>
 Grades:  <input type="number" name="grades">
 <br><br>

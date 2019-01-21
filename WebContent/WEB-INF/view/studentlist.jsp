@@ -57,16 +57,16 @@
     while(rs.next())    {
     %>
 				<tr>
-					<td><%=rs.getString("id") %></td>
+					<td><%=rs.getInt("id") %></td>
 					<td><%=rs.getString("username") %></td>
 					<td><%=rs.getString("fullname") %></td>
 					<td><%=rs.getString("fathername") %></td>
 					<td><%=rs.getString("mothername") %></td>
-					<td><%=rs.getString("phone") %></td>
+					<td><%=rs.getInt("phone") %></td>
 					<td><%=rs.getString("status") %></td>
-					<td><%=rs.getString("year") %></td>
-					<td><%=rs.getString("grades") %></td>
-					<td><%=rs.getString("lessons") %></td>
+					<td><%=rs.getInt("year") %></td>
+					<td><%=rs.getInt("grades") %></td>
+					<td><%=rs.getInt("lessons") %></td>
 
 
 

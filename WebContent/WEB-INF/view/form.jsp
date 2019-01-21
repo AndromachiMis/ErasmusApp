@@ -28,7 +28,7 @@ con = DriverManager.getConnection(jdbcUrl, user, pass);
 <form action="StudentServlet" method="POST">
 Fill the form:</br>
   Id:<br>
-  <input type="text" name="id">
+  <input type="number" name="id">
   <br><br>
    Username:<br>
   <input type="text" name="username">
@@ -41,6 +41,9 @@ Fill the form:</br>
   <br><br>
    Mothername:<br>
   <input type="text" name="mothername">
+  <br><br>  
+  Phone:<br>
+  <input type="number" name="phone">
   <br><br>  
   Choose the year of your studies:<br>
    <input type="number" name="year" /><br>

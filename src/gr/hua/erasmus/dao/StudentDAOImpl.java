@@ -31,7 +31,7 @@ public class StudentDAOImpl implements StudentDAO {
 			ps.setString(5, student.getMothername());
 			ps.setInt(6, student.getPhone());
 			ps.setString(7, student.getStatus());
-			ps.setString(8, student.getYear());
+			ps.setInt(8, student.getYear());
 			ps.setInt(9, student.getGrades());
 			ps.setInt(10, student.getLessons());
 			
@@ -73,7 +73,7 @@ public class StudentDAOImpl implements StudentDAO {
 				stud.setMothername(rs.getString("mothername"));
 				stud.setPhone(rs.getInt("phone"));
 				stud.setStatus(rs.getString("status"));
-				stud.setYear(rs.getString("year"));
+				stud.setYear(rs.getInt("year"));
 				stud.setGrades(rs.getInt("grades"));
 				stud.setLessons(rs.getInt("lessons"));
 					
@@ -105,17 +105,17 @@ public class StudentDAOImpl implements StudentDAO {
 		try{
 			con = connection.condb();
 			ps = con.prepareStatement(query);
-			ps.setInt(1, student.getId());
-			ps.setString(2, student.getUsername());
-			ps.setString(3, student.getPassword());
-			ps.setString(4, student.getFullname());
-			ps.setString(5, student.getFathername());
-			ps.setString(6, student.getMothername());
-			ps.setInt(7, student.getPhone());
-			ps.setString(8, student.getStatus());
-			ps.setString(9, student.getYear());
-			ps.setInt(10, student.getGrades());
-			ps.setInt(11, student.getLessons());
+			ps.setString(1, student.getUsername());
+			ps.setString(2, student.getPassword());
+			ps.setString(3, student.getFullname());
+			ps.setString(4, student.getFathername());
+			ps.setString(5, student.getMothername());
+			ps.setInt(6, student.getPhone());
+			ps.setString(7, student.getStatus());
+			ps.setInt(8, student.getYear());
+			ps.setInt(9, student.getGrades());
+			ps.setInt(10, student.getLessons());
+			ps.setInt(11, student.getId());
 			
 			int out = ps.executeUpdate();
 			
@@ -180,7 +180,7 @@ public class StudentDAOImpl implements StudentDAO {
 				stud.setMothername(rs.getString("mothername"));
 				stud.setPhone(rs.getInt("phone"));
 				stud.setStatus(rs.getString("status"));
-				stud.setYear(rs.getString("year"));
+				stud.setYear(rs.getInt("year"));
 				stud.setGrades(rs.getInt("grades"));
 				stud.setLessons(rs.getInt("lessons"));					
 				

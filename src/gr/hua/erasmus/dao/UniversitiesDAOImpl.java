@@ -90,10 +90,11 @@ public class UniversitiesDAOImpl implements UniversitiesDAO {
 		try{
 			con = connection.condb();
 			ps = con.prepareStatement(query);
-			ps.setInt(1, university.getId());
-			ps.setString(2, university.getName());
-			ps.setString(3, university.getLocation());
-			ps.setInt(4, university.getNum_acceptants());
+			ps.setString(1, university.getName());
+			ps.setString(2, university.getLocation());
+			ps.setInt(3, university.getNum_acceptants());
+			ps.setInt(4, university.getId());
+
 			
 			int out = ps.executeUpdate();
 			

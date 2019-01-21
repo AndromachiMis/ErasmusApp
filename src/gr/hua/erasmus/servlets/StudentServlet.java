@@ -1,14 +1,15 @@
 package gr.hua.erasmus.servlets;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import gr.hua.erasmus.dao.FormDAOImpl;
+import gr.hua.erasmus.entities.Form;
 
 /**
  * Servlet implementation class StudentServlet
@@ -45,6 +46,7 @@ public class StudentServlet extends HttpServlet {
 		String fullname = request.getParameter("fullname");					
 		String fathername = request.getParameter("fathername");
 		String mothername = request.getParameter("mothername");
+		int phone = Integer.parseInt(request.getParameter("phone"));
 		int year = Integer.parseInt(request.getParameter("year"));
 		int lessons = Integer.parseInt(request.getParameter("lessons"));
 		String[] universities = request.getParameterValues("universities");
@@ -59,6 +61,9 @@ public class StudentServlet extends HttpServlet {
 		}
 		
 		if (valid) {
+			Form form = new Form(username, fullname, fathername, mothername, phone, year, lessons, universities, cert);
+			FormDAOImpl formDaoImpl = new FormDAOImpl();
+			formDaoImpl.save(form);
 			response.sendRedirect("success");
 		} else {
 			response.sendRedirect("fail");

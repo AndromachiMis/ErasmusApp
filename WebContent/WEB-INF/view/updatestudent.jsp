@@ -12,7 +12,7 @@ Insert the id of the Student you want to Update:
 <input type = "text" name="id" />
 </br></br>
  Username: <br>
-<input type="text" name="user" />
+<input type="text" name="username" />
 </br></br>
 Password: <br>
 <input type="text" name="password"/>
@@ -33,7 +33,7 @@ Status: <br>
 <input type="text" name="status"/>
  </br></br>
 Year: <br>
- <input type="text" name="year"/>
+ <input type="number" name="year"/>
  </br></br>
 Grades: <br>
  <input type="number" name="grades"/>

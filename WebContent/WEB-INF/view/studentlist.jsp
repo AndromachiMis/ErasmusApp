@@ -47,8 +47,8 @@
     {
     Class.forName("com.mysql.cj.jdbc.Driver");
     String jdbcUrl = "jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false&serverTimezone=UTC";
-    String user = "it21489";
-    //String user = "root";
+    //String user = "it21489";
+    String user = "root";
     String pass = "root";
     String query="select * from student";
     con = DriverManager.getConnection(jdbcUrl, user, pass);

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,14 +24,15 @@ public class StudentController {
 	@Autowired
 	private StudentDAO studentDAO;
 	
-	@GetMapping("/students")
-	public List<Student> getAll() {
-		List<Student> student = studentDAO.getAll();
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = {"application/json", "application/xml"})
+	public Student getStudent(@PathVariable("id") int id) {
+		Student student = studentDAO.getById(id);
+		System.out.println("student :" + student);
 		return student;
-		
 	}
 	
-	@PostMapping("/addstudent")
+		
+	/*@PostMapping("/addstudent")
 	public Student addStudent(@RequestBody Student theStudent) {
 		studentDAO.save(theStudent);
 		return theStudent;
@@ -51,6 +53,6 @@ public class StudentController {
 				}
 				studentDAO.deleteById(studentId);
 				return "Deleted student id - " + studentId;
-	}
+	}*/
 
 }

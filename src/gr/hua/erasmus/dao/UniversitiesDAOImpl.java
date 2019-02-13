@@ -8,14 +8,16 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 import gr.hua.erasmus.dbconn.dbconnection;
 import gr.hua.erasmus.entities.Universities;
 
+@Component
 public class UniversitiesDAOImpl implements UniversitiesDAO {
 
-
 	dbconnection connection = new dbconnection();
-
 
 	@Override
 	public void save(Universities university) {

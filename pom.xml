@@ -16,14 +16,6 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.8</version>
 		</dependency>
-		
-	<!-- Add support for JSP ... get rid of Eclipse error -->				 
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>javax.servlet.jsp-api</artifactId>
-			<version>2.3.1</version>
-		</dependency>
-				
 
 		<!-- Spring -->
 		<dependency>
@@ -73,7 +65,6 @@
 
 		<plugins>
 			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>

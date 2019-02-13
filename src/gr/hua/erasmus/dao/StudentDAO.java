@@ -6,7 +6,6 @@ import gr.hua.erasmus.entities.Student;
 
 public interface StudentDAO {
 
-	
 	public void save(Student student);
 	
 	public Student getById(int id);

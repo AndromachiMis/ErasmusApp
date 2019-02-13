@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,25 +19,35 @@ import gr.hua.erasmus.entities.Student;
 
 
 @RestController
-@RequestMapping("/api/student")
-public class StudentController {
+@RequestMapping("/api")
+public class StudentApiController {
 	
 	@Autowired
 	private StudentDAO studentDAO;
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = {"application/json", "application/xml"})
-	public Student getStudent(@PathVariable("id") int id) {
-		Student student = studentDAO.getById(id);
-		System.out.println("student :" + student);
+	@GetMapping("/students")
+	public List<Student> listStudents(){
+		List<Student> student = studentDAO.getAll();
 		return student;
 	}
-	
-		
-	/*@PostMapping("/addstudent")
-	public Student addStudent(@RequestBody Student theStudent) {
-		studentDAO.save(theStudent);
+	@GetMapping("/students/{studentId}")
+	public Student getStudent(@PathVariable int studentId) {
+		Student theStudent = studentDAO.getById(studentId);
+		if (theStudent==null) {
+			try {
+				throw new Exception("Student id not found" + studentId);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		return theStudent;
-	}
+	}	
+		
+	@PostMapping("/addstudent")
+	//public Student addStudent(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("fullname") String fullname) {
+		//return student;
+	//}
 
 	@PutMapping("/updatestudent")
 	public Student updateStudent(@RequestBody Student theStudent) {
@@ -44,15 +55,5 @@ public class StudentController {
 		return theStudent;
 	}
 	
-	@DeleteMapping("/students/{studentId}")
-	public String deleteStudent(@PathVariable int studentId) {
-		Student theStudent = studentDAO.getById(studentId);
-				if (theStudent == null) {
-					//throw new StudentNotFoundException("Student id not found" + studentId);
-					
-				}
-				studentDAO.deleteById(studentId);
-				return "Deleted student id - " + studentId;
-	}*/
-
+	
 }

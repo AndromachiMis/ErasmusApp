@@ -7,7 +7,6 @@ import gr.hua.erasmus.entities.Universities;
 
 public interface UniversitiesDAO {
 	
-	
 	public void save (Universities university);
 	
 	public Universities getById(int id);

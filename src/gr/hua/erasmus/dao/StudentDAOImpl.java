@@ -8,11 +8,14 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 import gr.hua.erasmus.dbconn.dbconnection;
 import gr.hua.erasmus.entities.Student;
 
+@Component
 public class StudentDAOImpl implements StudentDAO {
-
 
 	dbconnection connection = new dbconnection();
 

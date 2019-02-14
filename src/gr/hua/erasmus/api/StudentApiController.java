@@ -3,6 +3,8 @@ package gr.hua.erasmus.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import gr.hua.erasmus.dao.StudentDAO;
 import gr.hua.erasmus.entities.Student;
+import gr.hua.erasmus.entities.Universities;
 
 
 @RestController
@@ -43,17 +46,23 @@ public class StudentApiController {
 		}
 		return theStudent;
 	}	
-		
-	@PostMapping("/addstudent")
-	//public Student addStudent(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("fullname") String fullname) {
-		//return student;
-	//}
-
-	@PutMapping("/updatestudent")
-	public Student updateStudent(@RequestBody Student theStudent) {
-		studentDAO.update(theStudent);
-		return theStudent;
+	
+	@RequestMapping(value="/addstudent", method=RequestMethod.POST)	
+	public Student addStudent(@RequestParam(required=false, name="username") String username, @RequestParam(required=false, name="password") String password, @RequestParam(required=false, name="fullname") String fullname, @RequestParam (required=false, name="fathername") String fathername, @RequestParam (required=false, name="mothername") String mothername, @RequestParam (required=false, name="phone") Integer phone, @RequestParam (required=false, name="status") String status, @RequestParam (required=false, name="year") Integer year, @RequestParam (required=false, name="grades") Integer grades, @RequestParam (required=false, name="lessons") Integer lessons) {
+	Student student = new Student (username, password,fullname,fathername,mothername,phone,status,year,grades,lessons);
+	studentDAO.save(student);
+	return student;
 	}
+	
+	@SuppressWarnings("rawtypes")
+	@RequestMapping(value="/delete/{id}", method= RequestMethod.DELETE)
+	public ResponseEntity<?> deleteStudent(@PathVariable("id") int id) {
+		studentDAO.deleteById(id);
+		return new ResponseEntity(HttpStatus.OK);
+	}
+	
+
+	
 	
 	
 }

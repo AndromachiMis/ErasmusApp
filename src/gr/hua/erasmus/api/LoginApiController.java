@@ -11,13 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequestMapping("/")
 public class LoginApiController {
 	
-/*@PostMapping("/login")
-
-public Login login(@RequestParam(required=false, name="username") String username, @RequestParam(required=false, name="password") String password) {
-	
-	
-	
-}*/
-	
+//@PostMapping("/login")
+//
+//public Login login(@RequestParam(required=false, name="username") String username, @RequestParam(required=false, name="password") String password) {
+//	
+//}
 
 }

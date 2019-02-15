@@ -45,17 +45,17 @@ public class UniversityApiController {
 	
 	
 	@PostMapping("/adduniversity")
-	public Universities addUniversity(@RequestParam(required=false, name="name") String name, @RequestParam(required=false, name="location") String location, @RequestParam(required=false, name="num_acceptants") Integer num_acceptants)  {
+	public Universities addUniversity(@RequestParam String name, @RequestParam String location, @RequestParam Integer num_acceptants)  {
 		Universities university=new Universities(name, location, num_acceptants);
 		universitiesDAO.save(university);
 		return university;
 	}
 	
-	/*@RequestMapping(value="/updateuniversity", method= RequestMethod.PUT)
-	public Universities updateUniversity() {
+	@RequestMapping(value="/updateuniversity", method= RequestMethod.PUT)
+	public Universities updateUniversity(@RequestParam Universities university) {
 		universitiesDAO.update(university);
 		return university;
-	}*/
+	}
 	
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(value="/delete/{id}", method= RequestMethod.DELETE)

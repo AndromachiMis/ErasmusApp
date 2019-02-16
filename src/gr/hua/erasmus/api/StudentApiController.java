@@ -47,12 +47,21 @@ public class StudentApiController {
 		return theStudent;
 	}	
 	
-	@RequestMapping(value="/addstudent", method=RequestMethod.POST)	
-	public Student addStudent(@RequestParam(required=false, name="username") String username, @RequestParam(required=false, name="password") String password, @RequestParam(required=false, name="fullname") String fullname, @RequestParam (required=false, name="fathername") String fathername, @RequestParam (required=false, name="mothername") String mothername, @RequestParam (required=false, name="phone") Integer phone, @RequestParam (required=false, name="status") String status, @RequestParam (required=false, name="year") Integer year, @RequestParam (required=false, name="grades") Integer grades, @RequestParam (required=false, name="lessons") Integer lessons) {
-	Student student = new Student (username, password,fullname,fathername,mothername,phone,status,year,grades,lessons);
-	studentDAO.save(student);
-	return student;
+	@PostMapping(value="/addstudent")	
+	public Student addStudent(@RequestParam String username, @RequestParam String password, @RequestParam String fullname, @RequestParam String fathername, @RequestParam String mothername, @RequestParam Integer phone, @RequestParam String status, @RequestParam Integer year, @RequestParam Integer grades, @RequestParam Integer lessons) {
+		Student student = new Student (username, password, fullname, fathername, mothername, phone, status, year, grades, lessons);
+		studentDAO.save(student);
+		return student;
 	}
+	
+	@RequestMapping(value="/updatestudent", method = RequestMethod.PUT)
+	public Student updateStudent(@RequestParam(value="id", required=true) Integer id, @RequestParam(value="username", required=true) String username, @RequestParam(value="password", required=true) String password, @RequestParam(value="fullname", required=true) String fullname, @RequestParam(value="fathername", required=true) String fathername, @RequestParam(value="mothername", required=true) String mothername, @RequestParam(value="phone", required=true) Integer phone, @RequestParam(value="status", required=true) String status, @RequestParam(value="year", required=true) Integer year, @RequestParam(value="grades", required=true) Integer grades, @RequestParam(value="lessons", required=true) Integer lessons) {
+		Student student = new Student (id, username, password, fullname, fathername, mothername, phone, status, year, grades, lessons);
+		studentDAO.update(student);
+		return student;
+	}
+
+	
 	
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(value="/delete/{id}", method= RequestMethod.DELETE)

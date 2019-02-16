@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -14,7 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import gr.hua.erasmus.dao.UniversitiesDAO;
-import gr.hua.erasmus.entities.Student;
 import gr.hua.erasmus.entities.Universities;
 
 
@@ -52,10 +50,12 @@ public class UniversityApiController {
 	}
 	
 	@RequestMapping(value="/updateuniversity", method= RequestMethod.PUT)
-	public Universities updateUniversity(@RequestParam Universities university) {
+	public Universities updateUniversity(@RequestParam(value="id", required=true) Integer id, @RequestParam(value="name", required=true) String name, @RequestParam(value="location", required=true) String location, @RequestParam(value="num_acceptants", required=true) Integer num_acceptants) {
+		Universities university = new Universities (id, name, location, num_acceptants);
 		universitiesDAO.update(university);
 		return university;
 	}
+	
 	
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(value="/delete/{id}", method= RequestMethod.DELETE)

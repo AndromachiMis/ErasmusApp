@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import org.springframework.stereotype.Component;
+
 import gr.hua.erasmus.dbconn.dbconnection;
 import gr.hua.erasmus.entities.Form;
 
-
+@Component
 public class FormDAOImpl implements FormDAO {
 	
 	dbconnection connection = new dbconnection();

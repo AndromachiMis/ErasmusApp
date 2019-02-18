@@ -17,13 +17,14 @@ public class LoginDAOImpl implements LoginDAO {
 	dbconnection connection = new dbconnection();
 
 	@Override
-	public void login(String username, String password) {
+	public String login(String username, String password) {
 		// TODO Auto-generated method stub		
 		dbconnection connection = new dbconnection();
 		String query = "select * from users where username=? and password=?";
 		Connection con = null;
 		PreparedStatement ps = null;
-		ResultSet rs = null;		
+		ResultSet rs = null;
+		String role = null;
 		try {	
 			con = connection.condb();
 			ps = con.prepareStatement(query);			
@@ -31,10 +32,9 @@ public class LoginDAOImpl implements LoginDAO {
 			ps.setString(2, password);	
 			rs = ps.executeQuery();		
 
-			if (rs.next()) {		
-				
-					System.out.println("Success login ");			
-				
+			if (rs.next()) {
+				role = rs.getString("role");
+				System.out.println("Success login ");
 			} else {
 				System.out.println("Invalid login");;
 			}
@@ -50,8 +50,7 @@ public class LoginDAOImpl implements LoginDAO {
 				e.printStackTrace();
 			}
 		}
-		
-		
+		return role;
 	}
 
 }

@@ -13,17 +13,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
-@RequestMapping("/login")
+@RequestMapping("/")
 public class LoginApiController {
 	
 	@Autowired
 	private LoginDAO loginDAO;	
 	
-	
-	
-	@PostMapping(value="/succ")		
-	public void successlogin(@RequestParam String username, @RequestParam String password) {
-	loginDAO.login(username, password);	
+	@PostMapping(value="/login")		
+	public String successlogin(@RequestParam String username, @RequestParam String password) {
+		String role = loginDAO.login(username, password);
+		return role;
 	}
 	
 	
